@@ -57,4 +57,23 @@ func main() {
 	}
 
 	// Map
+	// If declared but not initialized, will result an error
+	// var m map[string]int
+
+	// Map must be initialized before used
+	m := make(map[string]int)
+
+	m["key"] = 10
+	m["size"] = 50
+	fmt.Println(m["key"], m["size"])
+	fmt.Println("Map length", len(m))
+
+	// Delete item
+	delete(m, "key")
+	fmt.Println("Map length", len(m))
+
+	// ok is result of map accessing
+	if name, ok := m["size"]; ok {
+		fmt.Println(name, ok)
+	}
 }
